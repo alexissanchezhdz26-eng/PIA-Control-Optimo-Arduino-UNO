@@ -459,29 +459,64 @@ Estos resultados corresponden a las pruebas realizadas sobre el prototipo y no d
 
 ---
 
-## 11. Gráficas comparativas
 
-Se generaron cuatro gráficas para comparar el comportamiento experimental de los controladores.
+## 11. Gráficas comparativas de los controladores
+
+Para evaluar el comportamiento experimental de la planta RC de segundo orden, se compararon los resultados de cuatro estrategias de control:
+
+- LQR.
+- Asignación de polos.
+- Control integral.
+- LQI.
+
+Las señales fueron procesadas en Scilab, aplicando un filtrado de mediana y alineación temporal para facilitar la comparación de las pruebas experimentales.
 
 ### 11.1 Comparación de respuestas X2
 
-Se compara la evolución de la salida del sistema ante los cambios de referencia.
+![Comparación de respuestas X2](PIA_Control_Optimo/Graficas/Comparativo/FINAL_Comparacion_X2.png)
+
+**Figura 5.** Comparación de las respuestas experimentales de salida X2 para los cuatro controladores.
+
+Esta gráfica permite observar el seguimiento de referencia y las diferencias en el comportamiento dinámico de cada controlador.
 
 ### 11.2 Comparación de acciones de control
 
-Se representa el comportamiento de la señal de control aplicada a la planta.
+![Comparación de acciones de control](PIA_Control_Optimo/Graficas/Comparativo/FINAL_Comparacion_Control.png)
 
-### 11.3 Comparación de errores
+**Figura 6.** Comparación de las acciones de control aplicadas a la planta RC.
 
-Se analiza el error de seguimiento de referencia de cada controlador.
+Se muestra la evolución de la señal U generada por cada controlador durante las pruebas experimentales.
+
+### 11.3 Comparación de errores de seguimiento
+
+![Comparación de errores](PIA_Control_Optimo/Graficas/Comparativo/FINAL_Comparacion_Error.png)
+
+**Figura 7.** Comparación de los errores de seguimiento de los cuatro controladores.
+
+El error se define como:
+
+$$
+e(t)=r(t)-x_2(t)
+$$
+
+Esta comparación permite analizar la diferencia entre la referencia deseada y la salida medida.
 
 ### 11.4 Referencias experimentales alineadas
 
-Se muestran las referencias utilizadas para comparar las pruebas bajo una misma escala temporal.
+![Referencias experimentales](PIA_Control_Optimo/Graficas/Comparativo/FINAL_Comparacion_Referencias.png)
 
-**Nota:** las imágenes comparativas se incorporarán directamente al README cuando se confirmen sus nombres y rutas exactas dentro del repositorio.
+**Figura 8.** Referencias experimentales alineadas para los cuatro controladores.
 
----
+Esta gráfica permite verificar los valores de referencia utilizados y su alineación temporal durante el procesamiento de los registros.
+
+### Análisis general
+
+A partir de los indicadores experimentales calculados en Scilab, se identificaron diferencias en el desempeño de los cuatro controladores.
+
+El controlador integral presentó el menor error absoluto medio (MAE) en las tres referencias analizadas. Por otra parte, el controlador LQI presentó el menor RMSE para la referencia de 0.50 V.
+
+Los resultados muestran la importancia de comparar tanto el seguimiento de referencia como la acción de control y el comportamiento experimental de la planta.
+
 
 ## 12. Herramientas utilizadas
 
