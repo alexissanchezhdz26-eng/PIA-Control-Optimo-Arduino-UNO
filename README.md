@@ -518,6 +518,42 @@ El controlador integral presentó el menor error absoluto medio (MAE) en las tre
 Los resultados muestran la importancia de comparar tanto el seguimiento de referencia como la acción de control y el comportamiento experimental de la planta.
 
 
+## Índice de desempeño cuadrático experimental
+
+Para comparar el comportamiento de los cuatro controladores, se calculó el índice de desempeño cuadrático utilizando los registros experimentales obtenidos mediante Arduino UNO.
+
+La función de costo utilizada fue:
+
+$$
+J=\int_{t_0}^{t_0+15}
+\left[
+(x_1-2r)^2+
+5(x_2-r)^2+
+(u-3r)^2
+\right]dt
+$$
+
+El cálculo se realizó en Scilab mediante integración trapezoidal, utilizando ventanas de 15 segundos por referencia y un filtro de mediana de 11 muestras.
+
+### Resultados experimentales
+
+| Controlador | J (0.30 V) | J (0.50 V) | J (0.80 V) |
+|---|---:|---:|---:|
+| LQR | **1.04599** | **0.98149** | 1.02471 |
+| Asignación de polos | 1.28652 | 1.03305 | 0.71675 |
+| Integral | 1.96003 | 1.00845 | **0.42347** |
+| LQI | 1.45719 | 1.00288 | 0.64864 |
+
+### Análisis de resultados
+
+El controlador LQR presentó el menor costo experimental para las referencias de 0.30 V y 0.50 V.
+
+Para la referencia de 0.80 V, el controlador integral obtuvo el menor costo, con un valor de J = 0.42347.
+
+Los resultados muestran que el desempeño depende de la referencia y de las condiciones experimentales. El índice J considera las desviaciones de los estados y el esfuerzo de control, por lo que sus resultados pueden diferir de los indicadores MAE y RMSE.
+
+Los valores corresponden a ventanas experimentales de duración finita y no representan el costo teórico de horizonte infinito del diseño LQR.
+
 ## 12. Herramientas utilizadas
 
 ### Hardware
