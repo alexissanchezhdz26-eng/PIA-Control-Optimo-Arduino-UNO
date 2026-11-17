@@ -590,20 +590,16 @@ La documentación fotográfica se encuentra en:
 
 ---
 
-## 14. Video de demostración
 
-Se incorporará un video donde se explique:
+## Video demostrativo del proyecto
 
-1. El objetivo del proyecto.
-2. La planta RC construida.
-3. Las conexiones del Arduino.
-4. El funcionamiento de los cuatro controladores.
-5. Los resultados obtenidos en Scilab.
-6. Las conclusiones experimentales.
+En el siguiente video se presenta el desarrollo del PIA de
+Control Óptimo, incluyendo el modelo matemático, los
+controladores implementados, las simulaciones y la
+demostración física utilizando Arduino UNO.
 
-**Enlace del video:** pendiente de publicación.
+[Ver presentación y demostración del PIA en YouTube](https://www.youtube.com/watch?v=IIXk6Os-Q8M)
 
----
 
 ## 15. Conclusiones
 
